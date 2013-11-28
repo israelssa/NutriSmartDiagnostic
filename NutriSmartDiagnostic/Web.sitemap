@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Página Inicial"  description="">
+    <siteMapNode url="PesquisarPacientes.aspx" title="Pesquisar Pacientes"  description="">
+        <siteMapNode url="CadastroPaciente.aspx" title="Novo Paciente"  description="" />
+        <siteMapNode url="AcompanharPaciente.aspx" title="Acompanhar Paciente"  description="">
+          <siteMapNode url="AvaliacaoClinica.aspx" title="Avaliação Clínica"  description="">
+            <siteMapNode url="NovaConsulta.aspx" title="Nova Consulta"  description="">
+               <siteMapNode url="CadastroMedidasAntropometricas.aspx" title="Dieta do Paciente"  description="" />
+            </siteMapNode>
+            <siteMapNode url="CadastroAlimentoHabito.aspx" title="Alimentos e Habitos"  description="" />
+            <siteMapNode url="CadastroHistoricoClinico.aspx" title="Histórico Clínico"  description="" />
+          </siteMapNode>
+          <siteMapNode url="AcompanhamentoDieta.aspx" title="Dieta do Paciente"  description="">
+            <siteMapNode url="CadastrarDieta.aspx" title="Cadastrar Dieta"  description="" />
+          </siteMapNode>
+          <siteMapNode url="ProgressoPaciente.aspx" title="Progressão do Paciente"  description="" />
+        </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="About.aspx" title="Sobre"  description="" />
+  </siteMapNode>
+</siteMap>

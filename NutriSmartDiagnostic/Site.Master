@@ -1,0 +1,123 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="NutriSmartDiagnostic.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Nutri Smart Diagnostics</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style4
+        {
+            height: 69px;
+        }
+        .style5
+        {
+            height: 177px;
+        }
+        </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="top">
+        <table style="width:100%; height: 29px;">
+        <tr>
+        <td valign="middle"  align="right">
+            <asp:Label ID="lblNomeUsuario" runat="server" Font-Bold="True" Font-Size="9pt" 
+                    ForeColor="White"></asp:Label>
+            &nbsp;<asp:LinkButton ID="lkbSair" runat="server" Visible="False">Sair</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;
+&nbsp;</td>
+        </tr>
+        </table>
+    </div>
+    <div class="page">
+        <div class="header">
+            <div class="loginDisplay">
+                     
+            </div>
+            <table style="width:100%; height: 155px;">
+                <tr>
+                    <td class="style5">
+                        <br />
+                        <br />
+                        <br />
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="104px" 
+                            ImageUrl="~/Imagens/Marca.png"></asp:ImageButton>
+                        <br />
+        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="border-bottom-style: ridge">
+                <asp:HyperLink ID="HyperLink1" runat="server" Font-Italic="True" Font-Size="Small" 
+                    ForeColor="#003300" NavigateUrl="~/Default.aspx" Font-Bold="True">Home</asp:HyperLink>
+                        &nbsp;|&nbsp;<asp:HyperLink ID="hplSobre" runat="server" Font-Italic="True" Font-Size="Small" 
+                    ForeColor="#003300" NavigateUrl="~/About.aspx" Font-Bold="True">Sobre</asp:HyperLink>
+                        &nbsp;|
+                    <asp:HyperLink ID="hplServicos" runat="server" Font-Italic="True" Font-Size="Small" 
+                    ForeColor="#003300" Font-Bold="True">Serviços</asp:HyperLink>
+                        &nbsp;|&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" Font-Italic="True" Font-Size="Small" 
+                    ForeColor="#003300" Font-Bold="True">Contato  </asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear hideSkiplink">
+
+           <div>
+               <table style="width:100%; height: 59px;">
+                   <tr>
+                       <td class="style4" align="left">
+
+                            &nbsp;
+                            <asp:Menu ID="Menu1" runat="server" BorderColor="#003300" BorderStyle="None" Font-Bold="True" 
+                                               Font-Size="Large" ForeColor="#003300" Orientation="Horizontal" 
+                                               Visible="False">
+                                <Items>
+                                    <asp:MenuItem Text="Paciente" Value="Paciente" 
+                                        NavigateUrl="~/PesquisarPacientes.aspx">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/AcompanharPaciente.aspx" Text="| Acompanhamento |" 
+                                        Value="Avaliação Clinica"></asp:MenuItem>
+                                    <asp:MenuItem Text="Avaliação Clínica" Value="Nova Consulta" 
+                                        NavigateUrl="~/AvaliacaoClinica.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                            <br />
+&nbsp;
+                            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Bold="True" 
+                                ForeColor="#003300">
+                            </asp:SiteMapPath>
+                            <br />
+                            <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource1" 
+                                Font-Size="Medium" ForeColor="#003300" StaticDisplayLevels="3" Visible="False">
+                            </asp:Menu>
+                            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+                                StartingNodeUrl="~/Default.aspx" />
+                       </td>
+                   </tr>
+               </table>
+            </div>
+                
+        </div>
+        <div class="main" style="border-style: ridge">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear" align="center">
+        
+        </div>
+    </div>
+    <div class="footer">
+        <table align="center">
+            <tr>
+                <td valign="middle">
+                      <p style="font-size:9px" align="center">© Desenvolvido por Paulo Rogério, Tiago Silva e Israel Ramos.  Alunos formandos do curso de Bacharel em Sistemas de Informação Faculdade Ruy Barbosa 2013.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

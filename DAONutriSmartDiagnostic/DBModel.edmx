@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBNutriSmartDiagnosticsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DBNutriSmartDiagnosticsModelStoreContainer">
+          <EntitySet Name="AparelhoGastroIntestinal" EntityType="DBNutriSmartDiagnosticsModel.Store.AparelhoGastroIntestinal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Consulta" EntityType="DBNutriSmartDiagnosticsModel.Store.Consulta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dieta" EntityType="DBNutriSmartDiagnosticsModel.Store.Dieta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EntrevistaPaciente" EntityType="DBNutriSmartDiagnosticsModel.Store.EntrevistaPaciente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HistoricoClinico" EntityType="DBNutriSmartDiagnosticsModel.Store.HistoricoClinico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedidasAntropometricas" EntityType="DBNutriSmartDiagnosticsModel.Store.MedidasAntropometricas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nutricionista" EntityType="DBNutriSmartDiagnosticsModel.Store.Nutricionista" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Paciente" EntityType="DBNutriSmartDiagnosticsModel.Store.Paciente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="DBNutriSmartDiagnosticsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="DBNutriSmartDiagnosticsModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConsultasMedidas" EntityType="DBNutriSmartDiagnosticsModel.Store.ConsultasMedidas" store:Type="Views" store:Schema="dbo" store:Name="ConsultasMedidas">
+            <DefiningQuery>SELECT 
+      [ConsultasMedidas].[idConsulta] AS [idConsulta], 
+      [ConsultasMedidas].[idPaciente] AS [idPaciente], 
+      [ConsultasMedidas].[idNutricionista] AS [idNutricionista], 
+      [ConsultasMedidas].[Data] AS [Data], 
+      [ConsultasMedidas].[Observacao] AS [Observacao], 
+      [ConsultasMedidas].[idMedidasAntropometricas] AS [idMedidasAntropometricas], 
+      [ConsultasMedidas].[Expr1] AS [Expr1], 
+      [ConsultasMedidas].[PesoAtual] AS [PesoAtual], 
+      [ConsultasMedidas].[PesoDesejado] AS [PesoDesejado], 
+      [ConsultasMedidas].[PesoHabitual] AS [PesoHabitual], 
+      [ConsultasMedidas].[Altura] AS [Altura], 
+      [ConsultasMedidas].[PressaoArterial] AS [PressaoArterial], 
+      [ConsultasMedidas].[Triceps] AS [Triceps], 
+      [ConsultasMedidas].[Subescapular] AS [Subescapular], 
+      [ConsultasMedidas].[Biceps] AS [Biceps], 
+      [ConsultasMedidas].[Coxa] AS [Coxa], 
+      [ConsultasMedidas].[SupraIliaca] AS [SupraIliaca], 
+      [ConsultasMedidas].[Abdomen] AS [Abdomen], 
+      [ConsultasMedidas].[Punho] AS [Punho], 
+      [ConsultasMedidas].[Braco] AS [Braco], 
+      [ConsultasMedidas].[Abdominal] AS [Abdominal], 
+      [ConsultasMedidas].[Cintura] AS [Cintura], 
+      [ConsultasMedidas].[Quadril] AS [Quadril], 
+      [ConsultasMedidas].[PercentualGordura] AS [PercentualGordura], 
+      [ConsultasMedidas].[PesoMagro] AS [PesoMagro], 
+      [ConsultasMedidas].[PesoGordo] AS [PesoGordo], 
+      [ConsultasMedidas].[PesoMuscular] AS [PesoMuscular], 
+      [ConsultasMedidas].[TotalAgua] AS [TotalAgua]
+      FROM [dbo].[ConsultasMedidas] AS [ConsultasMedidas]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AparelhoGastroIntestinal_Paciente" Association="DBNutriSmartDiagnosticsModel.Store.FK_AparelhoGastroIntestinal_Paciente">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="AparelhoGastroIntestinal" EntitySet="AparelhoGastroIntestinal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AparelhoGastroIntestinal_Paciente1" Association="DBNutriSmartDiagnosticsModel.Store.FK_AparelhoGastroIntestinal_Paciente1">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="AparelhoGastroIntestinal" EntitySet="AparelhoGastroIntestinal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_Nutricionista" Association="DBNutriSmartDiagnosticsModel.Store.FK_Consulta_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_Paciente" Association="DBNutriSmartDiagnosticsModel.Store.FK_Consulta_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dieta_Paciente" Association="DBNutriSmartDiagnosticsModel.Store.FK_Dieta_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Dieta" EntitySet="Dieta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntrevistaPaciente_Nutricionista" Association="DBNutriSmartDiagnosticsModel.Store.FK_EntrevistaPaciente_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="EntrevistaPaciente" EntitySet="EntrevistaPaciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntrevistaPaciente_Paciente" Association="DBNutriSmartDiagnosticsModel.Store.FK_EntrevistaPaciente_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="EntrevistaPaciente" EntitySet="EntrevistaPaciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoClinico_Nutricionista" Association="DBNutriSmartDiagnosticsModel.Store.FK_HistoricoClinico_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="HistoricoClinico" EntitySet="HistoricoClinico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoClinico_Paciente" Association="DBNutriSmartDiagnosticsModel.Store.FK_HistoricoClinico_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="HistoricoClinico" EntitySet="HistoricoClinico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedidasAntropometricas_Consulta" Association="DBNutriSmartDiagnosticsModel.Store.FK_MedidasAntropometricas_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="MedidasAntropometricas" EntitySet="MedidasAntropometricas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nutricionista_Usuario" Association="DBNutriSmartDiagnosticsModel.Store.FK_Nutricionista_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_Usuario" Association="DBNutriSmartDiagnosticsModel.Store.FK_Paciente_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AparelhoGastroIntestinal">
+          <Key>
+            <PropertyRef Name="idGastroIntestinal" />
+          </Key>
+          <Property Name="idGastroIntestinal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="idNutricionista" Type="int" />
+          <Property Name="Disfagia" Type="bit" />
+          <Property Name="DisfagiaAlimento" Type="varchar" MaxLength="100" />
+          <Property Name="DisfagiaTipo" Type="varchar" MaxLength="50" />
+          <Property Name="Odinofagia" Type="bit" />
+          <Property Name="Dispepsia" Type="bit" />
+          <Property Name="Epigastragia" Type="bit" />
+          <Property Name="Regurgitacao" Type="bit" />
+          <Property Name="Pirose" Type="bit" />
+          <Property Name="Náuseas" Type="bit" />
+          <Property Name="Vomitos" Type="bit" />
+          <Property Name="Vomitos_Horario" Type="varchar" MaxLength="10" />
+          <Property Name="Caracteristicas_Vomitos" Type="varchar" MaxLength="10" />
+          <Property Name="DorAbdominal" Type="bit" />
+          <Property Name="LocalDorAbdominal" Type="varchar" MaxLength="70" />
+          <Property Name="CaracteristicasDorAbdominal" Type="varchar" MaxLength="80" />
+          <Property Name="RitmoIntestinal" Type="varchar" MaxLength="50" />
+          <Property Name="AspectoFeses" Type="varchar" MaxLength="50" />
+          <Property Name="CorFeses" Type="varchar" MaxLength="20" />
+          <Property Name="DensidadeFeses" Type="varchar" MaxLength="30" />
+          <Property Name="DorFeses" Type="bit" />
+          <Property Name="SangueFeses" Type="bit" />
+          <Property Name="UsoDeMedicamentos" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+          </Key>
+          <Property Name="idConsulta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idNutricionista" Type="int" Nullable="false" />
+          <Property Name="Data" Type="datetime" />
+          <Property Name="Observacao" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Dieta">
+          <Key>
+            <PropertyRef Name="idDieta" />
+          </Key>
+          <Property Name="idDieta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="inicio" Type="datetime" />
+          <Property Name="termino" Type="datetime" />
+          <Property Name="Descricao" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EntrevistaPaciente">
+          <Key>
+            <PropertyRef Name="idEntrevistaPaciente" />
+          </Key>
+          <Property Name="idEntrevistaPaciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idNutricionista" Type="int" Nullable="false" />
+          <Property Name="AlimentosNaoGosta" Type="varchar" MaxLength="200" />
+          <Property Name="AlimentosGosta" Type="varchar" MaxLength="200" />
+          <Property Name="SonoHoras" Type="varchar" MaxLength="10" />
+          <Property Name="Etilismo" Type="varchar" MaxLength="20" />
+          <Property Name="Tabagistmo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="HistoricoClinico">
+          <Key>
+            <PropertyRef Name="idHistoricoClinico" />
+          </Key>
+          <Property Name="idHistoricoClinico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idNutricionista" Type="int" Nullable="false" />
+          <Property Name="Historico" Type="varchar(max)" />
+          <Property Name="Patologias" Type="varchar" MaxLength="300" />
+          <Property Name="Cirurgias" Type="varchar" MaxLength="200" />
+          <Property Name="Observacoes" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="MedidasAntropometricas">
+          <Key>
+            <PropertyRef Name="idMedidasAntropometricas" />
+          </Key>
+          <Property Name="idMedidasAntropometricas" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="int" />
+          <Property Name="PesoAtual" Type="decimal" Precision="3" />
+          <Property Name="PesoDesejado" Type="decimal" Precision="3" />
+          <Property Name="PesoHabitual" Type="decimal" Precision="3" />
+          <Property Name="Altura" Type="decimal" Precision="3" />
+          <Property Name="PressaoArterial" Type="varchar" MaxLength="8" />
+          <Property Name="Triceps" Type="decimal" Precision="3" />
+          <Property Name="Subescapular" Type="decimal" Precision="3" />
+          <Property Name="Biceps" Type="decimal" Precision="3" />
+          <Property Name="Coxa" Type="decimal" Precision="3" />
+          <Property Name="SupraIliaca" Type="decimal" Precision="3" />
+          <Property Name="Abdomen" Type="decimal" Precision="3" />
+          <Property Name="Punho" Type="decimal" Precision="3" />
+          <Property Name="Braco" Type="decimal" Precision="3" />
+          <Property Name="Abdominal" Type="decimal" Precision="3" />
+          <Property Name="Cintura" Type="decimal" Precision="3" />
+          <Property Name="Quadril" Type="decimal" Precision="3" />
+          <Property Name="PercentualGordura" Type="decimal" Precision="3" />
+          <Property Name="PesoMagro" Type="decimal" Precision="3" />
+          <Property Name="PesoGordo" Type="decimal" Precision="3" />
+          <Property Name="PesoMuscular" Type="decimal" Precision="3" />
+          <Property Name="TotalAgua" Type="decimal" Precision="3" />
+        </EntityType>
+        <EntityType Name="Nutricionista">
+          <Key>
+            <PropertyRef Name="idNutricionista" />
+          </Key>
+          <Property Name="idNutricionista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" MaxLength="150" />
+          <Property Name="CRN" Type="varchar" MaxLength="15" />
+          <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Email" Type="varchar" MaxLength="60" />
+          <Property Name="Tel1" Type="varchar" MaxLength="20" />
+          <Property Name="Tel2" Type="varchar" MaxLength="20" />
+          <Property Name="Tel3" Type="varchar" MaxLength="20" />
+          <Property Name="Sexo" Type="char" MaxLength="2" />
+          <Property Name="DataNasc" Type="datetime" />
+          <Property Name="Profissao" Type="varchar" MaxLength="50" />
+          <Property Name="Jornada" Type="varchar" MaxLength="10" />
+          <Property Name="CondicaoTrabalho" Type="varchar" MaxLength="10" />
+          <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Senha" Type="varchar" MaxLength="20" />
+          <Property Name="Ativo" Type="bit" />
+          <Property Name="Tipo" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DBNutriSmartDiagnostics.dbo.ConsultasMedidas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ConsultasMedidas">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+            <PropertyRef Name="idPaciente" />
+            <PropertyRef Name="idNutricionista" />
+            <PropertyRef Name="idMedidasAntropometricas" />
+          </Key>
+          <Property Name="idConsulta" Type="int" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idNutricionista" Type="int" Nullable="false" />
+          <Property Name="Data" Type="datetime" />
+          <Property Name="Observacao" Type="varchar(max)" />
+          <Property Name="idMedidasAntropometricas" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="int" />
+          <Property Name="PesoAtual" Type="decimal" Precision="3" />
+          <Property Name="PesoDesejado" Type="decimal" Precision="3" />
+          <Property Name="PesoHabitual" Type="decimal" Precision="3" />
+          <Property Name="Altura" Type="decimal" Precision="3" />
+          <Property Name="PressaoArterial" Type="varchar" MaxLength="8" />
+          <Property Name="Triceps" Type="decimal" Precision="3" />
+          <Property Name="Subescapular" Type="decimal" Precision="3" />
+          <Property Name="Biceps" Type="decimal" Precision="3" />
+          <Property Name="Coxa" Type="decimal" Precision="3" />
+          <Property Name="SupraIliaca" Type="decimal" Precision="3" />
+          <Property Name="Abdomen" Type="decimal" Precision="3" />
+          <Property Name="Punho" Type="decimal" Precision="3" />
+          <Property Name="Braco" Type="decimal" Precision="3" />
+          <Property Name="Abdominal" Type="decimal" Precision="3" />
+          <Property Name="Cintura" Type="decimal" Precision="3" />
+          <Property Name="Quadril" Type="decimal" Precision="3" />
+          <Property Name="PercentualGordura" Type="decimal" Precision="3" />
+          <Property Name="PesoMagro" Type="decimal" Precision="3" />
+          <Property Name="PesoGordo" Type="decimal" Precision="3" />
+          <Property Name="PesoMuscular" Type="decimal" Precision="3" />
+          <Property Name="TotalAgua" Type="decimal" Precision="3" />
+        </EntityType>
+        <Association Name="FK_AparelhoGastroIntestinal_Paciente">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Store.Nutricionista" Multiplicity="0..1" />
+          <End Role="AparelhoGastroIntestinal" Type="DBNutriSmartDiagnosticsModel.Store.AparelhoGastroIntestinal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="AparelhoGastroIntestinal">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AparelhoGastroIntestinal_Paciente1">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="0..1" />
+          <End Role="AparelhoGastroIntestinal" Type="DBNutriSmartDiagnosticsModel.Store.AparelhoGastroIntestinal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="AparelhoGastroIntestinal">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Store.Nutricionista" Multiplicity="1" />
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Store.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="1" />
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Store.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dieta_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="0..1" />
+          <End Role="Dieta" Type="DBNutriSmartDiagnosticsModel.Store.Dieta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Dieta">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntrevistaPaciente_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Store.Nutricionista" Multiplicity="1" />
+          <End Role="EntrevistaPaciente" Type="DBNutriSmartDiagnosticsModel.Store.EntrevistaPaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="EntrevistaPaciente">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntrevistaPaciente_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="1" />
+          <End Role="EntrevistaPaciente" Type="DBNutriSmartDiagnosticsModel.Store.EntrevistaPaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="EntrevistaPaciente">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoClinico_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Store.Nutricionista" Multiplicity="1" />
+          <End Role="HistoricoClinico" Type="DBNutriSmartDiagnosticsModel.Store.HistoricoClinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="HistoricoClinico">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoClinico_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="1" />
+          <End Role="HistoricoClinico" Type="DBNutriSmartDiagnosticsModel.Store.HistoricoClinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="HistoricoClinico">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedidasAntropometricas_Consulta">
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Store.Consulta" Multiplicity="0..1" />
+          <End Role="MedidasAntropometricas" Type="DBNutriSmartDiagnosticsModel.Store.MedidasAntropometricas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="MedidasAntropometricas">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nutricionista_Usuario">
+          <End Role="Usuario" Type="DBNutriSmartDiagnosticsModel.Store.Usuario" Multiplicity="0..1" />
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Store.Nutricionista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Nutricionista">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_Usuario">
+          <End Role="Usuario" Type="DBNutriSmartDiagnosticsModel.Store.Usuario" Multiplicity="0..1" />
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Store.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBNutriSmartDiagnosticsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DBNutriSmartDiagnosticsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AparelhoGastroIntestinal" EntityType="DBNutriSmartDiagnosticsModel.AparelhoGastroIntestinal" />
+          <EntitySet Name="Consulta" EntityType="DBNutriSmartDiagnosticsModel.Consulta" />
+          <EntitySet Name="EntrevistaPaciente" EntityType="DBNutriSmartDiagnosticsModel.EntrevistaPaciente" />
+          <EntitySet Name="HistoricoClinico" EntityType="DBNutriSmartDiagnosticsModel.HistoricoClinico" />
+          <EntitySet Name="MedidasAntropometricas" EntityType="DBNutriSmartDiagnosticsModel.MedidasAntropometricas" />
+          <EntitySet Name="Nutricionista" EntityType="DBNutriSmartDiagnosticsModel.Nutricionista" />
+          <EntitySet Name="Paciente" EntityType="DBNutriSmartDiagnosticsModel.Paciente" />
+          <EntitySet Name="sysdiagrams" EntityType="DBNutriSmartDiagnosticsModel.sysdiagrams" />
+          <EntitySet Name="Usuario" EntityType="DBNutriSmartDiagnosticsModel.Usuario" />
+          <AssociationSet Name="FK_AparelhoGastroIntestinal_Paciente" Association="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="AparelhoGastroIntestinal" EntitySet="AparelhoGastroIntestinal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AparelhoGastroIntestinal_Paciente1" Association="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente1">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="AparelhoGastroIntestinal" EntitySet="AparelhoGastroIntestinal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_Nutricionista" Association="DBNutriSmartDiagnosticsModel.FK_Consulta_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_Paciente" Association="DBNutriSmartDiagnosticsModel.FK_Consulta_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedidasAntropometricas_Consulta" Association="DBNutriSmartDiagnosticsModel.FK_MedidasAntropometricas_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="MedidasAntropometricas" EntitySet="MedidasAntropometricas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntrevistaPaciente_Nutricionista" Association="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="EntrevistaPaciente" EntitySet="EntrevistaPaciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntrevistaPaciente_Paciente" Association="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="EntrevistaPaciente" EntitySet="EntrevistaPaciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoClinico_Nutricionista" Association="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Nutricionista">
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+            <End Role="HistoricoClinico" EntitySet="HistoricoClinico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoClinico_Paciente" Association="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="HistoricoClinico" EntitySet="HistoricoClinico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nutricionista_Usuario" Association="DBNutriSmartDiagnosticsModel.FK_Nutricionista_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Nutricionista" EntitySet="Nutricionista" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_Usuario" Association="DBNutriSmartDiagnosticsModel.FK_Paciente_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <EntitySet Name="Dieta" EntityType="DBNutriSmartDiagnosticsModel.Dieta" />
+          <EntitySet Name="ConsultasMedidas" EntityType="DBNutriSmartDiagnosticsModel.ConsultasMedidas" />
+          <AssociationSet Name="FK_Dieta_Paciente" Association="DBNutriSmartDiagnosticsModel.FK_Dieta_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Dieta" EntitySet="Dieta" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AparelhoGastroIntestinal">
+          <Key>
+            <PropertyRef Name="idGastroIntestinal" />
+          </Key>
+          <Property Name="idGastroIntestinal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" />
+          <Property Name="idNutricionista" Type="Int32" />
+          <Property Name="Disfagia" Type="Boolean" />
+          <Property Name="DisfagiaAlimento" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DisfagiaTipo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Odinofagia" Type="Boolean" />
+          <Property Name="Dispepsia" Type="Boolean" />
+          <Property Name="Epigastragia" Type="Boolean" />
+          <Property Name="Regurgitacao" Type="Boolean" />
+          <Property Name="Pirose" Type="Boolean" />
+          <Property Name="Náuseas" Type="Boolean" />
+          <Property Name="Vomitos" Type="Boolean" />
+          <Property Name="Vomitos_Horario" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Caracteristicas_Vomitos" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DorAbdominal" Type="Boolean" />
+          <Property Name="LocalDorAbdominal" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="CaracteristicasDorAbdominal" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="RitmoIntestinal" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AspectoFeses" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CorFeses" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DensidadeFeses" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DorFeses" Type="Boolean" />
+          <Property Name="SangueFeses" Type="Boolean" />
+          <Property Name="UsoDeMedicamentos" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Nutricionista" Relationship="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente" FromRole="AparelhoGastroIntestinal" ToRole="Nutricionista" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente1" FromRole="AparelhoGastroIntestinal" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+          </Key>
+          <Property Name="idConsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idNutricionista" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" />
+          <Property Name="Observacao" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Nutricionista" Relationship="DBNutriSmartDiagnosticsModel.FK_Consulta_Nutricionista" FromRole="Consulta" ToRole="Nutricionista" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_Consulta_Paciente" FromRole="Consulta" ToRole="Paciente" />
+          <NavigationProperty Name="MedidasAntropometricas" Relationship="DBNutriSmartDiagnosticsModel.FK_MedidasAntropometricas_Consulta" FromRole="Consulta" ToRole="MedidasAntropometricas" />
+        </EntityType>
+        <EntityType Name="EntrevistaPaciente">
+          <Key>
+            <PropertyRef Name="idEntrevistaPaciente" />
+          </Key>
+          <Property Name="idEntrevistaPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idNutricionista" Type="Int32" Nullable="false" />
+          <Property Name="AlimentosNaoGosta" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AlimentosGosta" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SonoHoras" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Etilismo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Tabagistmo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Nutricionista" Relationship="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Nutricionista" FromRole="EntrevistaPaciente" ToRole="Nutricionista" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Paciente" FromRole="EntrevistaPaciente" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="HistoricoClinico">
+          <Key>
+            <PropertyRef Name="idHistoricoClinico" />
+          </Key>
+          <Property Name="idHistoricoClinico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idNutricionista" Type="Int32" Nullable="false" />
+          <Property Name="Historico" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Patologias" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Cirurgias" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Observacoes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Nutricionista" Relationship="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Nutricionista" FromRole="HistoricoClinico" ToRole="Nutricionista" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Paciente" FromRole="HistoricoClinico" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="MedidasAntropometricas">
+          <Key>
+            <PropertyRef Name="idMedidasAntropometricas" />
+          </Key>
+          <Property Name="idMedidasAntropometricas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <Property Name="PesoAtual" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PesoDesejado" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PesoHabitual" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Altura" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PressaoArterial" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Triceps" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Subescapular" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Biceps" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Coxa" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="SupraIliaca" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Abdomen" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Punho" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Braco" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Abdominal" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Cintura" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Quadril" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PercentualGordura" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PesoMagro" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PesoGordo" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="PesoMuscular" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="TotalAgua" Type="Decimal" Precision="3" Scale="0" />
+          <NavigationProperty Name="Consulta" Relationship="DBNutriSmartDiagnosticsModel.FK_MedidasAntropometricas_Consulta" FromRole="MedidasAntropometricas" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="Nutricionista">
+          <Key>
+            <PropertyRef Name="idNutricionista" />
+          </Key>
+          <Property Name="idNutricionista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="CRN" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="AparelhoGastroIntestinal" Relationship="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente" FromRole="Nutricionista" ToRole="AparelhoGastroIntestinal" />
+          <NavigationProperty Name="Consulta" Relationship="DBNutriSmartDiagnosticsModel.FK_Consulta_Nutricionista" FromRole="Nutricionista" ToRole="Consulta" />
+          <NavigationProperty Name="EntrevistaPaciente" Relationship="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Nutricionista" FromRole="Nutricionista" ToRole="EntrevistaPaciente" />
+          <NavigationProperty Name="HistoricoClinico" Relationship="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Nutricionista" FromRole="Nutricionista" ToRole="HistoricoClinico" />
+          <NavigationProperty Name="Usuario" Relationship="DBNutriSmartDiagnosticsModel.FK_Nutricionista_Usuario" FromRole="Nutricionista" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Tel1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Tel2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Tel3" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sexo" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="DataNasc" Type="DateTime" />
+          <Property Name="Profissao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Jornada" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CondicaoTrabalho" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="AparelhoGastroIntestinal" Relationship="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente1" FromRole="Paciente" ToRole="AparelhoGastroIntestinal" />
+          <NavigationProperty Name="Consulta" Relationship="DBNutriSmartDiagnosticsModel.FK_Consulta_Paciente" FromRole="Paciente" ToRole="Consulta" />
+          <NavigationProperty Name="EntrevistaPaciente" Relationship="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Paciente" FromRole="Paciente" ToRole="EntrevistaPaciente" />
+          <NavigationProperty Name="HistoricoClinico" Relationship="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Paciente" FromRole="Paciente" ToRole="HistoricoClinico" />
+          <NavigationProperty Name="Usuario" Relationship="DBNutriSmartDiagnosticsModel.FK_Paciente_Usuario" FromRole="Paciente" ToRole="Usuario" />
+          <NavigationProperty Name="Dieta" Relationship="DBNutriSmartDiagnosticsModel.FK_Dieta_Paciente" FromRole="Paciente" ToRole="Dieta" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Senha" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Ativo" Type="Boolean" />
+          <Property Name="Tipo" Type="Boolean" />
+          <NavigationProperty Name="Nutricionista" Relationship="DBNutriSmartDiagnosticsModel.FK_Nutricionista_Usuario" FromRole="Usuario" ToRole="Nutricionista" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_Paciente_Usuario" FromRole="Usuario" ToRole="Paciente" />
+        </EntityType>
+        <Association Name="FK_AparelhoGastroIntestinal_Paciente">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Nutricionista" Multiplicity="0..1" />
+          <End Role="AparelhoGastroIntestinal" Type="DBNutriSmartDiagnosticsModel.AparelhoGastroIntestinal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="AparelhoGastroIntestinal">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AparelhoGastroIntestinal_Paciente1">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Paciente" Multiplicity="0..1" />
+          <End Role="AparelhoGastroIntestinal" Type="DBNutriSmartDiagnosticsModel.AparelhoGastroIntestinal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="AparelhoGastroIntestinal">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Nutricionista" Multiplicity="1" />
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Paciente" Multiplicity="1" />
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedidasAntropometricas_Consulta">
+          <End Role="Consulta" Type="DBNutriSmartDiagnosticsModel.Consulta" Multiplicity="0..1" />
+          <End Role="MedidasAntropometricas" Type="DBNutriSmartDiagnosticsModel.MedidasAntropometricas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="MedidasAntropometricas">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntrevistaPaciente_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Nutricionista" Multiplicity="1" />
+          <End Role="EntrevistaPaciente" Type="DBNutriSmartDiagnosticsModel.EntrevistaPaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="EntrevistaPaciente">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntrevistaPaciente_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Paciente" Multiplicity="1" />
+          <End Role="EntrevistaPaciente" Type="DBNutriSmartDiagnosticsModel.EntrevistaPaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="EntrevistaPaciente">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoClinico_Nutricionista">
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Nutricionista" Multiplicity="1" />
+          <End Role="HistoricoClinico" Type="DBNutriSmartDiagnosticsModel.HistoricoClinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutricionista">
+              <PropertyRef Name="idNutricionista" />
+            </Principal>
+            <Dependent Role="HistoricoClinico">
+              <PropertyRef Name="idNutricionista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoClinico_Paciente">
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Paciente" Multiplicity="1" />
+          <End Role="HistoricoClinico" Type="DBNutriSmartDiagnosticsModel.HistoricoClinico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="HistoricoClinico">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nutricionista_Usuario">
+          <End Role="Usuario" Type="DBNutriSmartDiagnosticsModel.Usuario" Multiplicity="0..1" />
+          <End Role="Nutricionista" Type="DBNutriSmartDiagnosticsModel.Nutricionista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Nutricionista">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_Usuario">
+          <End Role="Usuario" Type="DBNutriSmartDiagnosticsModel.Usuario" Multiplicity="0..1" />
+          <End Role="Paciente" Type="DBNutriSmartDiagnosticsModel.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Dieta">
+          <Key>
+            <PropertyRef Name="idDieta" />
+          </Key>
+          <Property Type="Int32" Name="idDieta" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="idPaciente" />
+          <Property Type="DateTime" Name="inicio" />
+          <Property Type="DateTime" Name="termino" />
+          <NavigationProperty Name="Paciente" Relationship="DBNutriSmartDiagnosticsModel.FK_Dieta_Paciente" FromRole="Dieta" ToRole="Paciente" />
+          <Property Type="String" Name="Descricao" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ConsultasMedidas">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+            <PropertyRef Name="idPaciente" />
+            <PropertyRef Name="idNutricionista" />
+            <PropertyRef Name="idMedidasAntropometricas" />
+          </Key>
+          <Property Type="Int32" Name="idConsulta" Nullable="false" />
+          <Property Type="Int32" Name="idPaciente" Nullable="false" />
+          <Property Type="Int32" Name="idNutricionista" Nullable="false" />
+          <Property Type="DateTime" Name="Data" />
+          <Property Type="String" Name="Observacao" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="idMedidasAntropometricas" Nullable="false" />
+          <Property Type="Int32" Name="Expr1" />
+          <Property Type="Decimal" Name="PesoAtual" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PesoDesejado" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PesoHabitual" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Altura" Precision="3" Scale="0" />
+          <Property Type="String" Name="PressaoArterial" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Triceps" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Subescapular" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Biceps" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Coxa" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="SupraIliaca" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Abdomen" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Punho" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Braco" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Abdominal" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Cintura" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="Quadril" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PercentualGordura" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PesoMagro" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PesoGordo" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="PesoMuscular" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="TotalAgua" Precision="3" Scale="0" />
+        </EntityType>
+        <Association Name="FK_Dieta_Paciente">
+          <End Type="DBNutriSmartDiagnosticsModel.Paciente" Role="Paciente" Multiplicity="0..1" />
+          <End Type="DBNutriSmartDiagnosticsModel.Dieta" Role="Dieta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Dieta">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBNutriSmartDiagnosticsModelStoreContainer" CdmEntityContainer="DBNutriSmartDiagnosticsEntities">
+    <EntitySetMapping Name="AparelhoGastroIntestinal">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.AparelhoGastroIntestinal)">
+        <MappingFragment StoreEntitySet="AparelhoGastroIntestinal">
+          <ScalarProperty Name="idGastroIntestinal" ColumnName="idGastroIntestinal" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+          <ScalarProperty Name="Disfagia" ColumnName="Disfagia" />
+          <ScalarProperty Name="DisfagiaAlimento" ColumnName="DisfagiaAlimento" />
+          <ScalarProperty Name="DisfagiaTipo" ColumnName="DisfagiaTipo" />
+          <ScalarProperty Name="Odinofagia" ColumnName="Odinofagia" />
+          <ScalarProperty Name="Dispepsia" ColumnName="Dispepsia" />
+          <ScalarProperty Name="Epigastragia" ColumnName="Epigastragia" />
+          <ScalarProperty Name="Regurgitacao" ColumnName="Regurgitacao" />
+          <ScalarProperty Name="Pirose" ColumnName="Pirose" />
+          <ScalarProperty Name="Náuseas" ColumnName="Náuseas" />
+          <ScalarProperty Name="Vomitos" ColumnName="Vomitos" />
+          <ScalarProperty Name="Vomitos_Horario" ColumnName="Vomitos_Horario" />
+          <ScalarProperty Name="Caracteristicas_Vomitos" ColumnName="Caracteristicas_Vomitos" />
+          <ScalarProperty Name="DorAbdominal" ColumnName="DorAbdominal" />
+          <ScalarProperty Name="LocalDorAbdominal" ColumnName="LocalDorAbdominal" />
+          <ScalarProperty Name="CaracteristicasDorAbdominal" ColumnName="CaracteristicasDorAbdominal" />
+          <ScalarProperty Name="RitmoIntestinal" ColumnName="RitmoIntestinal" />
+          <ScalarProperty Name="AspectoFeses" ColumnName="AspectoFeses" />
+          <ScalarProperty Name="CorFeses" ColumnName="CorFeses" />
+          <ScalarProperty Name="DensidadeFeses" ColumnName="DensidadeFeses" />
+          <ScalarProperty Name="DorFeses" ColumnName="DorFeses" />
+          <ScalarProperty Name="SangueFeses" ColumnName="SangueFeses" />
+          <ScalarProperty Name="UsoDeMedicamentos" ColumnName="UsoDeMedicamentos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.Consulta)">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntrevistaPaciente">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.EntrevistaPaciente)">
+        <MappingFragment StoreEntitySet="EntrevistaPaciente">
+          <ScalarProperty Name="idEntrevistaPaciente" ColumnName="idEntrevistaPaciente" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+          <ScalarProperty Name="AlimentosNaoGosta" ColumnName="AlimentosNaoGosta" />
+          <ScalarProperty Name="AlimentosGosta" ColumnName="AlimentosGosta" />
+          <ScalarProperty Name="SonoHoras" ColumnName="SonoHoras" />
+          <ScalarProperty Name="Etilismo" ColumnName="Etilismo" />
+          <ScalarProperty Name="Tabagistmo" ColumnName="Tabagistmo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoricoClinico">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.HistoricoClinico)">
+        <MappingFragment StoreEntitySet="HistoricoClinico">
+          <ScalarProperty Name="idHistoricoClinico" ColumnName="idHistoricoClinico" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+          <ScalarProperty Name="Historico" ColumnName="Historico" />
+          <ScalarProperty Name="Patologias" ColumnName="Patologias" />
+          <ScalarProperty Name="Cirurgias" ColumnName="Cirurgias" />
+          <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedidasAntropometricas">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.MedidasAntropometricas)">
+        <MappingFragment StoreEntitySet="MedidasAntropometricas">
+          <ScalarProperty Name="idMedidasAntropometricas" ColumnName="idMedidasAntropometricas" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+          <ScalarProperty Name="PesoAtual" ColumnName="PesoAtual" />
+          <ScalarProperty Name="PesoDesejado" ColumnName="PesoDesejado" />
+          <ScalarProperty Name="PesoHabitual" ColumnName="PesoHabitual" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="PressaoArterial" ColumnName="PressaoArterial" />
+          <ScalarProperty Name="Triceps" ColumnName="Triceps" />
+          <ScalarProperty Name="Subescapular" ColumnName="Subescapular" />
+          <ScalarProperty Name="Biceps" ColumnName="Biceps" />
+          <ScalarProperty Name="Coxa" ColumnName="Coxa" />
+          <ScalarProperty Name="SupraIliaca" ColumnName="SupraIliaca" />
+          <ScalarProperty Name="Abdomen" ColumnName="Abdomen" />
+          <ScalarProperty Name="Punho" ColumnName="Punho" />
+          <ScalarProperty Name="Braco" ColumnName="Braco" />
+          <ScalarProperty Name="Abdominal" ColumnName="Abdominal" />
+          <ScalarProperty Name="Cintura" ColumnName="Cintura" />
+          <ScalarProperty Name="Quadril" ColumnName="Quadril" />
+          <ScalarProperty Name="PercentualGordura" ColumnName="PercentualGordura" />
+          <ScalarProperty Name="PesoMagro" ColumnName="PesoMagro" />
+          <ScalarProperty Name="PesoGordo" ColumnName="PesoGordo" />
+          <ScalarProperty Name="PesoMuscular" ColumnName="PesoMuscular" />
+          <ScalarProperty Name="TotalAgua" ColumnName="TotalAgua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nutricionista">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.Nutricionista)">
+        <MappingFragment StoreEntitySet="Nutricionista">
+          <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CRN" ColumnName="CRN" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.Paciente)">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="DataNasc" ColumnName="DataNasc" />
+          <ScalarProperty Name="Profissao" ColumnName="Profissao" />
+          <ScalarProperty Name="Jornada" ColumnName="Jornada" />
+          <ScalarProperty Name="CondicaoTrabalho" ColumnName="CondicaoTrabalho" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(DBNutriSmartDiagnosticsModel.Usuario)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="Dieta">
+            <EntityTypeMapping TypeName="DBNutriSmartDiagnosticsModel.Dieta">
+              <MappingFragment StoreEntitySet="Dieta">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="termino" ColumnName="termino" />
+                <ScalarProperty Name="inicio" ColumnName="inicio" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idDieta" ColumnName="idDieta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsultasMedidas">
+            <EntityTypeMapping TypeName="DBNutriSmartDiagnosticsModel.ConsultasMedidas">
+              <MappingFragment StoreEntitySet="ConsultasMedidas">
+                <ScalarProperty Name="TotalAgua" ColumnName="TotalAgua" />
+                <ScalarProperty Name="PesoMuscular" ColumnName="PesoMuscular" />
+                <ScalarProperty Name="PesoGordo" ColumnName="PesoGordo" />
+                <ScalarProperty Name="PesoMagro" ColumnName="PesoMagro" />
+                <ScalarProperty Name="PercentualGordura" ColumnName="PercentualGordura" />
+                <ScalarProperty Name="Quadril" ColumnName="Quadril" />
+                <ScalarProperty Name="Cintura" ColumnName="Cintura" />
+                <ScalarProperty Name="Abdominal" ColumnName="Abdominal" />
+                <ScalarProperty Name="Braco" ColumnName="Braco" />
+                <ScalarProperty Name="Punho" ColumnName="Punho" />
+                <ScalarProperty Name="Abdomen" ColumnName="Abdomen" />
+                <ScalarProperty Name="SupraIliaca" ColumnName="SupraIliaca" />
+                <ScalarProperty Name="Coxa" ColumnName="Coxa" />
+                <ScalarProperty Name="Biceps" ColumnName="Biceps" />
+                <ScalarProperty Name="Subescapular" ColumnName="Subescapular" />
+                <ScalarProperty Name="Triceps" ColumnName="Triceps" />
+                <ScalarProperty Name="PressaoArterial" ColumnName="PressaoArterial" />
+                <ScalarProperty Name="Altura" ColumnName="Altura" />
+                <ScalarProperty Name="PesoHabitual" ColumnName="PesoHabitual" />
+                <ScalarProperty Name="PesoDesejado" ColumnName="PesoDesejado" />
+                <ScalarProperty Name="PesoAtual" ColumnName="PesoAtual" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="idMedidasAntropometricas" ColumnName="idMedidasAntropometricas" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="idNutricionista" ColumnName="idNutricionista" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.AparelhoGastroIntestinal" Width="2" PointX="8.25" PointY="11.375" Height="6.21091796875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.Consulta" Width="1.5" PointX="5.25" PointY="13.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.EntrevistaPaciente" Width="1.75" PointX="5.25" PointY="9" Height="2.9417936197916639" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.HistoricoClinico" Width="1.5" PointX="5.25" PointY="17.125" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.MedidasAntropometricas" Width="1.5" PointX="7.5" PointY="18.625" Height="5.6340136718750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.Nutricionista" Width="1.5" PointX="3" PointY="10.625" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.Paciente" Width="1.5" PointX="3" PointY="14.125" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.Usuario" Width="1.5" PointX="0.75" PointY="13.25" Height="2.3648893229166674" IsExpanded="true" />
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.595896809895832" />
+          <ConnectorPoint PointX="6.822916666666667" PointY="12.595896809895832" />
+          <ConnectorPoint PointX="6.989583333333333" PointY="12.595896809895832" />
+          <ConnectorPoint PointX="8.25" PointY="12.595896809895832" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_AparelhoGastroIntestinal_Paciente1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.662070283203125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="16.662070283203125" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="16.662070283203125" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="16.662070283203125" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="16.662070283203125" />
+          <ConnectorPoint PointX="8.25" PointY="16.662070283203125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_Consulta_Nutricionista" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.349106572115385" />
+          <ConnectorPoint PointX="5" PointY="13.849106572115385" />
+          <ConnectorPoint PointX="5" PointY="12.998847153846153" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="13.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_Consulta_Paciente" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.966095377604166" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="14.966095377604166" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="14.966095377604166" />
+          <ConnectorPoint PointX="5.25" PointY="14.966095377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_MedidasAntropometricas_Consulta" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="15.807190755208332" />
+          <ConnectorPoint PointX="6.8473244349011217" PointY="15.904515190109452" />
+          <ConnectorPoint PointX="6.9651755650988791" PointY="16.02236632030721" />
+          <ConnectorPoint PointX="7.125" PointY="16.182190755208332" />
+          <ConnectorPoint PointX="7.125" PointY="21.4420068359375" />
+          <ConnectorPoint PointX="7.5" PointY="21.4420068359375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Nutricionista" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.283396809895832" />
+          <ConnectorPoint PointX="5.25" PointY="11.283396809895832" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_EntrevistaPaciente_Paciente" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.234628019205729" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="16.234628019205729" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="16.234628019205729" />
+          <ConnectorPoint PointX="6.90625" PointY="16.234628019205729" />
+          <ConnectorPoint PointX="6.90625" PointY="11.941793619791664" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Nutricionista" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.367568110576922" />
+          <ConnectorPoint PointX="4.90625" PointY="13.773818110576922" />
+          <ConnectorPoint PointX="4.90625" PointY="18.499746093749998" />
+          <ConnectorPoint PointX="5.25" PointY="18.499746093749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_HistoricoClinico_Paciente" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.749873046875" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="17.749873046875" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="17.749873046875" />
+          <ConnectorPoint PointX="5.25" PointY="17.749873046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_Nutricionista_Usuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.25" />
+          <ConnectorPoint PointX="1.5" PointY="11.937499500000001" />
+          <ConnectorPoint PointX="3" PointY="11.937499500000001" />
+        </AssociationConnector>
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_Paciente_Usuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.869944661458334" />
+          <ConnectorPoint PointX="3" PointY="14.869944661458334" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.Dieta" Width="1.5" PointX="5.25" PointY="21.25" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="DBNutriSmartDiagnosticsModel.ConsultasMedidas" Width="1.5" PointX="3.375" PointY="0.75" Height="6.4032194010416674" />
+        <AssociationConnector Association="DBNutriSmartDiagnosticsModel.FK_Dieta_Paciente" >
+          <ConnectorPoint PointX="3.75" PointY="18.605205078125003" />
+          <ConnectorPoint PointX="3.75" PointY="22.3362939453125" />
+          <ConnectorPoint PointX="5.25" PointY="22.3362939453125" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
